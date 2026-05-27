@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sudoku</h1>
+        
+        <div class="controls">
+            <div class="info">
+                <div class="timer">
+                    <span>⏱️</span>
+                    <span id="time">00:00</span>
+                </div>
+                <div class="difficulty">
+                    <label>Dificuldade:</label>
+                    <select id="difficulty">
+                        <option value="easy">Fácil</option>
+                        <option value="medium" selected>Médio</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button id="newGame">Novo Jogo</button>
+                <button id="pauseBtn">Pausar</button>
+                <button id="resetBtn">Reiniciar</button>
+            </div>
+        </div>
+
+        <div id="board" class="board"></div>
+        
+        <div class="number-pad">
+            <button class="num-btn" data-num="1">1</button>
+            <button class="num-btn" data-num="2">2</button>
+            <button class="num-btn" data-num="3">3</button>
+            <button class="num-btn" data-num="4">4</button>
+            <button class="num-btn" data-num="5">5</button>
+            <button class="num-btn" data-num="6">6</button>
+            <button class="num-btn" data-num="7">7</button>
+            <button class="num-btn" data-num="8">8</button>
+            <button class="num-btn" data-num="9">9</button>
+            <button class="num-btn clear" data-num="0">Limpar</button>
+        </div>
+
+        <div id="pauseOverlay" class="pause-overlay hidden">
+            <div class="pause-content">
+                <h2>Jogo Pausado</h2>
+                <button id="resumeBtn">Continuar</button>
+            </div>
+        </div>
+
+        <div id="winModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>🎉 Parabéns!</h2>
+                <p>Você completou o Sudoku!</p>
+                <p>Tempo: <span id="finalTime"></span></p>
+                <button id="newGameWin">Novo Jogo</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
